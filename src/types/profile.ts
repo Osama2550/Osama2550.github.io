@@ -14,6 +14,8 @@ export interface PersonalInfo {
   socials: SocialLink[];
   /** Path under /public, e.g. "/assets/images/profile/profile.jpg". Leave undefined to show placeholder art. */
   profileImage?: string;
+  /** Path under /public to a brand mark shown in the nav. Leave undefined to fall back to initials/text. */
+  logo?: string;
   resumeUrl?: string;
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { navLinks, personal } from "@/data/profile";
 import { useActiveSection } from "@/lib/hooks/useActiveSection";
@@ -42,10 +43,24 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
         <button
           onClick={() => handleNavigate("#home")}
-          className="font-display text-lg font-semibold tracking-tight text-foreground"
+          aria-label="Go to home"
+          className="flex items-center gap-2"
         >
-          {firstName}
-          <span className="text-accent-2">.</span>
+          {personal.logo ? (
+            <Image
+              src={personal.logo}
+              alt=""
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-full object-cover"
+              priority
+            />
+          ) : (
+            <span className="font-display text-lg font-semibold tracking-tight text-foreground">
+              {firstName}
+              <span className="text-accent-2">.</span>
+            </span>
+          )}
         </button>
 
         <ul className="hidden items-center gap-1 md:flex">

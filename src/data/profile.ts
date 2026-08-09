@@ -40,7 +40,8 @@ export const personal: PersonalInfo = {
       icon: "instagram",
     },
   ],
-  profileImage: undefined,
+  profileImage: "/assets/images/profile/profile.png",
+  logo: "/assets/images/logo.png",
 };
 
 export const skillCategories: SkillCategory[] = [
@@ -124,6 +125,7 @@ export const projects: Project[] = [
     description:
       "A smart financial management application designed to help users track income, expenses, budgets, and personal financial activities with an easy-to-use interface.",
     technologies: ["Java", "Android", "SQLite / Room Database", "Material Design"],
+    image: "/assets/images/projects/personal-finance-manager.png",
   },
   {
     id: "time-capsule-memories",
