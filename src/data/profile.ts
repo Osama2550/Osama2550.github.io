@@ -141,6 +141,7 @@ export const projects: Project[] = [
       "Firebase Storage",
       "Cloud Messaging",
     ],
+    image: "/assets/images/projects/time-capsule-memories.png",
   },
   {
     id: "clothing-marketplace-website",
@@ -149,6 +150,7 @@ export const projects: Project[] = [
     description:
       "A modern online marketplace platform for browsing and showcasing clothing products with a user-friendly shopping experience.",
     technologies: ["Web Development", "AI Tools", "Responsive Design"],
+    image: "/assets/images/projects/clothing-marketplace-website.png",
   },
   {
     id: "other-applications-experiments",
@@ -157,6 +159,7 @@ export const projects: Project[] = [
     description:
       "Developed and explored various applications and technical projects focused on mobile development, automation, user experience improvement, and modern technologies.",
     technologies: ["Mobile Development", "Automation", "UX Improvement"],
+    image: "/assets/images/projects/other-applications-experiments.jpg",
   },
 ];
 
