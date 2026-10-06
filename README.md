@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal 3D Portfolio
 
-## Getting Started
+This is a static Next.js portfolio. The production build exports a complete website to `out/`, including the root `app-ads.txt` file and `.nojekyll` marker.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The build runs Next.js static export and copies `app-ads.txt` to `out/app-ads.txt`.
 
-## Learn More
+## GitHub Pages
 
-To learn more about Next.js, take a look at the following resources:
+The workflow at `.github/workflows/pages.yml` builds and deploys the site when changes are pushed to `master`. It sets the repository name as the Pages base path, which supports project sites such as `https://<owner>.github.io/<repository>/`. In the repository settings, enable GitHub Pages with **GitHub Actions** as the deployment source.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`app-ads.txt` is available at the root of the published site. For a project site, the URL includes the repository path (for example, `/personal-3d-portfolio/app-ads.txt`). A custom domain serves it at `/app-ads.txt` on that domain.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For a custom domain, set `GITHUB_PAGES_BASE_PATH` to an empty value in the Pages workflow and configure the domain in the repository's Pages settings.

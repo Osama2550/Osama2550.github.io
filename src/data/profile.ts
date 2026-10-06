@@ -22,7 +22,7 @@ export const personal: PersonalInfo = {
     "Passionate about technology, software development, and cybersecurity. I build practical digital solutions, explore emerging technologies, and continuously learn through hands-on projects and real-world challenges.",
   ],
   location: "Qatar",
-  email: "www.osam255@gmail.com",
+  email: "osam255@gmail.com",
   socials: [
     {
       label: "GitHub",
@@ -126,6 +126,7 @@ export const projects: Project[] = [
       "A smart financial management application designed to help users track income, expenses, budgets, and personal financial activities with an easy-to-use interface.",
     technologies: ["Java", "Android", "SQLite / Room Database", "Material Design"],
     image: "/assets/images/projects/personal-finance-manager.png",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.osama255.personalfinancemanager",
   },
   {
     id: "time-capsule-memories",

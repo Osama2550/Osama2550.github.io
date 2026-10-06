@@ -6,6 +6,7 @@ import { X, ExternalLink } from "lucide-react";
 import type { Project } from "@/types/profile";
 import { buttonStyles } from "@/components/ui/buttonStyles";
 import { GitHubGlyph } from "@/components/ui/BrandIcons";
+import { publicAsset } from "@/lib/publicAsset";
 
 export function ProjectModal({
   project,
@@ -52,7 +53,7 @@ export function ProjectModal({
 
         <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl">
           {project.image ? (
-            <Image src={project.image} alt={project.title} fill className="object-cover" />
+            <Image src={publicAsset(project.image)} alt={project.title} fill className="object-cover" />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/15 via-background-elevated to-accent-2/15 text-6xl">
               <span aria-hidden="true">{project.emoji}</span>
@@ -93,7 +94,7 @@ export function ProjectModal({
           </div>
         </div>
 
-        {(project.githubUrl || project.liveUrl) && (
+        {(project.githubUrl || project.liveUrl || project.playStoreUrl) && (
           <div className="mt-8 flex flex-wrap gap-3">
             {project.githubUrl && (
               <a
@@ -113,6 +114,16 @@ export function ProjectModal({
                 className={buttonStyles("primary")}
               >
                 <ExternalLink size={16} /> Live Demo
+              </a>
+            )}
+            {project.playStoreUrl && (
+              <a
+                href={project.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonStyles("primary")}
+              >
+                <ExternalLink size={16} /> Google Play / Download
               </a>
             )}
           </div>

@@ -6,6 +6,7 @@ import { personal, projects, skillCategories } from "@/data/profile";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 import { PlaceholderArt } from "@/components/ui/PlaceholderArt";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { publicAsset } from "@/lib/publicAsset";
 
 const totalSkills = skillCategories.reduce((sum, group) => sum + group.skills.length, 0);
 
@@ -28,7 +29,7 @@ export function About() {
         <div className="relative mx-auto w-full max-w-sm md:mx-0">
           {personal.profileImage ? (
             <Image
-              src={personal.profileImage}
+              src={publicAsset(personal.profileImage)}
               alt={personal.name}
               width={640}
               height={800}

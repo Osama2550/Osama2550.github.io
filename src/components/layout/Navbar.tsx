@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks, personal } from "@/data/profile";
 import { useActiveSection } from "@/lib/hooks/useActiveSection";
 import { scrollToTarget } from "@/lib/lenis";
+import { publicAsset } from "@/lib/publicAsset";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +49,7 @@ export function Navbar() {
         >
           {personal.logo ? (
             <Image
-              src={personal.logo}
+              src={publicAsset(personal.logo)}
               alt=""
               width={36}
               height={36}

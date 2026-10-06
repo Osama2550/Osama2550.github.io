@@ -6,6 +6,7 @@ import { projects } from "@/data/profile";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Lightbox } from "@/components/ui/Lightbox";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
+import { publicAsset } from "@/lib/publicAsset";
 
 const TILE_HEIGHTS = ["h-56", "h-72", "h-64", "h-80"];
 
@@ -38,7 +39,7 @@ export function Gallery() {
             >
               {project.image ? (
                 <Image
-                  src={project.image}
+                  src={publicAsset(project.image)}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -60,7 +61,7 @@ export function Gallery() {
         <Lightbox title={active.title} onClose={() => setActiveId(null)}>
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
             {active.image ? (
-              <Image src={active.image} alt={active.title} fill className="object-cover" />
+              <Image src={publicAsset(active.image)} alt={active.title} fill className="object-cover" />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/15 via-background-elevated to-accent-2/15 text-8xl">
                 <span aria-hidden="true">{active.emoji}</span>

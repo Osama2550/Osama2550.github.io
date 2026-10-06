@@ -48,6 +48,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   videoUrl?: string;
+  playStoreUrl?: string;
 }
 
 export interface NavLink {

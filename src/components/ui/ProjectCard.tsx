@@ -1,6 +1,9 @@
 import Image from "next/image";
 import type { Project } from "@/types/profile";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { publicAsset } from "@/lib/publicAsset";
+import { buttonStyles } from "@/components/ui/buttonStyles";
+import { ExternalLink } from "lucide-react";
 
 export function ProjectCard({
   project,
@@ -17,7 +20,7 @@ export function ProjectCard({
       <div className="relative aspect-video overflow-hidden">
         {project.image ? (
           <Image
-            src={project.image}
+            src={publicAsset(project.image)}
             alt={project.title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -46,6 +49,17 @@ export function ProjectCard({
             </span>
           )}
         </div>
+        {project.playStoreUrl && (
+          <a
+            href={project.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            className={buttonStyles("primary", "mt-3 w-fit")}
+          >
+            <ExternalLink size={16} /> Google Play / Download
+          </a>
+        )}
       </div>
     </TiltCard>
   );

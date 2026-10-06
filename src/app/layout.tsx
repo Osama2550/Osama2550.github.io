@@ -16,12 +16,10 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://example.com";
 const title = `${personal.name} — ${personal.role}`;
 const description = personal.bio.join(" ");
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
   title: {
     default: title,
     template: `%s — ${personal.name}`,
@@ -38,7 +36,6 @@ export const metadata: Metadata = {
   creator: personal.name,
   openGraph: {
     type: "website",
-    url: siteUrl,
     title,
     description,
     siteName: personal.name,
